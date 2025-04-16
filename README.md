@@ -1,0 +1,2 @@
+# laravel-vue-template-generator
+ 

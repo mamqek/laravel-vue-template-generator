@@ -1,5 +1,5 @@
 {
-    "name": "laravel-vue-template-generator",
+    "name": "laravel-vue-generator",
     "version": "1.0.0",
     "description": "A generator tool for quickly scaffolding Laravel and Vue.js projects with built-in support for authentication, i18n language support, Vue Router, Pinia store, and optional integrations like TailwindCSS, ShadCN-Vue components, and Google OAuth.",
     "main": "index.js",
@@ -11,10 +11,20 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "mamqek",
-    "keywords": ["tailwindcss", "laravel", "vue", "template", "shadcn-vue", "oauth", "i18n", "vue-router", "pinia"],
+    "keywords": [
+        "tailwindcss",
+        "laravel",
+        "vue",
+        "template",
+        "shadcn-vue",
+        "oauth",
+        "i18n",
+        "vue-router",
+        "pinia"
+    ],
     "license": "ISC",
     "dependencies": {
-        "node-plop": "^0.32.0",
+        "yeoman-environment": "^4.4.3",
         "yeoman-generator": "^7.5.1"
     },
     "repository": {

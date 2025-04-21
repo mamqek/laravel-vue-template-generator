@@ -1,11 +1,11 @@
 {
     "name": "laravel-vue-template",
     "version": "1.0.0",
-    "description": "A template for Laravel and Vue.js projects with authentication, i18n language support, Vue-router, pinia store and optional tailwindcss, shadcn-vue and Oauth.",
+    "description": "A generator tool for quickly scaffolding Laravel and Vue.js projects with built-in support for authentication, i18n language support, Vue Router, Pinia store, and optional integrations like TailwindCSS, ShadCN-Vue components, and Google OAuth.",
     "main": "index.js",
     "type": "module",
     "bin": {
-        "myapp": "./cli.js"
+        "laravel-vue-generate": "./cli.js"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +16,9 @@
     "dependencies": {
         "node-plop": "^0.32.0",
         "yeoman-generator": "^7.5.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mamqek/laravel-vue-template-generator"
     }
 }

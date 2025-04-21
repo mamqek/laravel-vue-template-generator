@@ -5,8 +5,8 @@ import { useUserStore } from '../stores/userStore.js';
 import { notify } from "@kyvg/vue3-notification";
 
 const i18n = createI18n({
-  locale: 'ru',
-  fallbackLocale: 'en',
+  locale: 'en',
+  fallbackLocale: 'ru',
   messages: {},
 });
 

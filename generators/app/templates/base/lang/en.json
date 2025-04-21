@@ -33,11 +33,11 @@
     "try" : "Try",
 
 
-    "welcome_to_dev": "Welcome to Mamqek's Developer Workspace",
-    "welcome_description_1": "Here, I create solutions for various challenges and precisely design modular website architecture.",
-    "welcome_description_2": "Every feature is designed to be easily transfered to other projects and modified if nesessary",
+    "welcome_to_dev": "Welcome to Mamqek's Laravel Vue Template",
+    "welcome_description_1": "This template provides you with a working authentication, i18n support, Vue Router, Pinia and integration with TailwindCSS, ShadCN-Vue components and Google OAuth.",
+    "welcome_description_2": "If you have any issues or questions, please contact me via GitHub. I'm always happy to help you with your projects.",
 
-
+    
     "unauthorized" : "Access Restricted",
     "unauthorized_auth": "Please sign in to continue",
     "unauthorized_role": "We're sorry, but it looks like you don't have the necessary permissions to view this page.",

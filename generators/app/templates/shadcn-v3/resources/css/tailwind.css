@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+                --shadcn-background: 0 0% 100%;
+                --shadcn-foreground: 0 0% 3.9%;
+                --shadcn-card: 0 0% 100%;
+                --shadcn-card-foreground: 0 0% 3.9%;
+                --shadcn-popover: 0 0% 100%;
+                --shadcn-popover-foreground: 0 0% 3.9%;
+                --shadcn-primary: 0 0% 9%;
+                --shadcn-primary-foreground: 0 0% 98%;
+                --shadcn-secondary: 0 0% 96.1%;
+                --shadcn-secondary-foreground: 0 0% 9%;
+                --shadcn-muted: 0 0% 96.1%;
+                --shadcn-muted-foreground: 0 0% 45.1%;
+                --shadcn-accent: 0 0% 96.1%;
+                --shadcn-accent-foreground: 0 0% 9%;
+                --shadcn-destructive: 0 84.2% 60.2%;
+                --shadcn-destructive-foreground: 0 0% 98%;
+                --shadcn-border: 0 0% 89.8%;
+                --shadcn-input: 0 0% 89.8%;
+                --shadcn-ring: 0 0% 3.9%;
+                --shadcn-chart-1: 12 76% 61%;
+                --shadcn-chart-2: 173 58% 39%;
+                --shadcn-chart-3: 197 37% 24%;
+                --shadcn-chart-4: 43 74% 66%;
+                --shadcn-chart-5: 27 87% 67%;
+                --shadcn-radius: 0.5rem;
+        }
+    .dark {
+                --shadcn-background: 0 0% 3.9%;
+                --shadcn-foreground: 0 0% 98%;
+                --shadcn-card: 0 0% 3.9%;
+                --shadcn-card-foreground: 0 0% 98%;
+                --shadcn-popover: 0 0% 3.9%;
+                --shadcn-popover-foreground: 0 0% 98%;
+                --shadcn-primary: 0 0% 98%;
+                --shadcn-primary-foreground: 0 0% 9%;
+                --shadcn-secondary: 0 0% 14.9%;
+                --shadcn-secondary-foreground: 0 0% 98%;
+                --shadcn-muted: 0 0% 14.9%;
+                --shadcn-muted-foreground: 0 0% 63.9%;
+                --shadcn-accent: 0 0% 14.9%;
+                --shadcn-accent-foreground: 0 0% 98%;
+                --shadcn-destructive: 0 62.8% 30.6%;
+                --shadcn-destructive-foreground: 0 0% 98%;
+                --shadcn-border: 0 0% 14.9%;
+                --shadcn-input: 0 0% 14.9%;
+                --shadcn-ring: 0 0% 83.1%;
+                --shadcn-chart-1: 220 70% 50%;
+                --shadcn-chart-2: 160 60% 45%;
+                --shadcn-chart-3: 30 80% 55%;
+                --shadcn-chart-4: 280 65% 60%;
+                --shadcn-chart-5: 340 75% 55%;
+        }
+}
+@layer base {
+  * {
+    @apply border-border;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+}

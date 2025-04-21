@@ -1,0 +1,90 @@
+{
+    "ru": "Russian",
+    "en": "English",
+
+    "home" : "Home",
+    "sign_in" : "Sign In",
+    "zip_code_checker": "Zip Code Checker NL",
+    "soul_map" : "Soul Map",
+    "clients" : "Clients",
+    "new_client" : "New Client",
+
+    "database" : "Database",
+    "data" : "Data",
+    "address" : "Address",
+    "language" : "Language",
+    "session" : "Session",
+
+    "welcome": "Welcome",
+    "goodbye": "Goodbye",
+    "logout": "Logout",
+    "submit" : "Submit",
+
+    "error" : "Error",
+    "session_expired" : "@:session expired",
+    "session_expired_message" : "You were away for too long. Please Login again to continue",
+
+    "save_*" : "Save {item}",
+    "new_*" : "New {item}",
+    "your_*" : "Your {item}",
+
+    "with" : "with",
+    "optional" : "(optional)",
+    "try" : "Try",
+
+
+    "welcome_to_dev": "Welcome to Mamqek's Developer Workspace",
+    "welcome_description_1": "Here, I create solutions for various challenges and precisely design modular website architecture.",
+    "welcome_description_2": "Every feature is designed to be easily transfered to other projects and modified if nesessary",
+
+
+    "unauthorized" : "Access Restricted",
+    "unauthorized_auth": "Please sign in to continue",
+    "unauthorized_role": "We're sorry, but it looks like you don't have the necessary permissions to view this page.",
+
+
+    "password" : "Password",
+    "username": "Username",
+    "email" : "E-mail",
+
+    "dont_have_an_account": "Don't have an account?",
+    "how_call" : "How should we call you?",
+    "already_have" : "Already have an account?",
+    
+    "and" : " and ",
+    "or" : " or ",
+
+    "sign_up" : "Sign Up",
+    "login" : "Login",
+    "create_account" : "Create account",
+
+    "sign_up_with" : "@:sign_up @:with @:username_and_email",
+    "sign_in_with" : "@:sign_in @:with @:username_or_email",
+    "confirm" : "Confirm",
+    "confirm_password" : "@:confirm @:password",
+    "forget_password" : "Forget Password?",
+
+
+    "soul_numbers" : "Soul Numbers",
+    "client" : "Client",
+    "name" : "Name",
+    "date" : "Date",
+    "date_of_birth" : "Date Of Birth",
+    "no_data" : "No data found",
+
+
+    "zip_code" : "Zip Code",
+    "house_number": "House number",
+    "house_letter": "House letter @:optional",
+    "exact_match": "Exact Match",
+    "find_buiding" : "Find building",
+    "choose_building" : "I meant this building! I want more info!",
+    "example" : "@:try 1012RJ and 147 for Royal Palace in Amsterdam"
+
+
+
+
+
+
+
+}

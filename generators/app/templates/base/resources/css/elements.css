@@ -1,0 +1,429 @@
+.pressable {
+    transition: background-color 3s, transform 0.2s;
+}
+
+.pressable:hover {
+    filter: brightness(95%);
+    transform: translateY(-2px);
+}
+
+.pressable:active {
+    filter: brightness(85%);
+    transform: translateY(2px);
+}
+
+/* ---------------------------------------------- */
+
+.btn {
+    border-radius: 8px;
+    /* Rounded corners for a modern look */
+    padding: 10px 20px;
+    /* Adequate padding for better touch target */
+    font-size: 16px;
+    /* Slightly larger font size */
+    font-weight: 600;
+    /* Semi-bold text */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 3s, box-shadow 0.3s, transform 0.1s ;
+    /* Smooth transitions for hover effects */
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Subtle shadow for a lifted effect */
+    min-height: 48px;
+    max-height: fit-content;
+    text-align: center;
+    vertical-align: middle;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+/* BUTTON STATES */
+
+/* Hover effect */
+.btn:hover {
+    /* background-color: #f1f1f1; Slightly darker background on hover */
+    filter: brightness(85%);
+    /* Darken the background on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    /* Enhanced shadow on hover */
+    transform: translateY(-2px);
+    /* Slight lift on hover */
+}
+
+/* Active effect */
+.btn:active {
+    filter: brightness(75%);
+    /* Even darker background on click */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    /* Reduced shadow on click */
+    transform: translateY(2px);
+    /* Push down effect on click */
+}
+
+/* Focus effect */
+.btn:focus {
+    outline: none;
+    /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(52, 55, 61, 0.5);
+    /* Custom focus ring */
+}
+
+/* Disabled effect */
+.btn:disabled {
+    opacity: 0.6;
+    /* Lower opacity for disabled button */
+    cursor: not-allowed;
+    /* Cursor indicates the button is disabled */
+    pointer-events: none;
+    /* Prevent mouse interactions */
+    box-shadow: none;
+    /* No shadow for disabled button */
+    transform: none;
+    /* No transform for disabled button */
+}
+
+/* No hover or active effect for disabled button */
+.btn:disabled:hover,
+.btn:disabled:active {
+    filter: none;
+    /* No filter for disabled button */
+    box-shadow: none;
+    /* No shadow for disabled button */
+    transform: none;
+    /* No transform for disabled button */
+}
+
+/* No focus effect for disabled button */
+.btn:disabled:focus {
+    outline: none;
+    /* No outline for disabled button */
+    box-shadow: none;
+    /* No shadow for disabled button */
+}
+
+p.info {
+    padding: 7px;
+    background-color: var(--grey-color);
+    border-radius: var(--border-radius-sm);
+    margin: 10px 0;
+}
+
+p.info::before {
+    content: attr(data-label)": ";
+    font-weight: 600;
+}
+
+/* @container (min-width: 450px) {
+    p.info{
+        background-color: aquamarine;
+    }
+} */
+
+/* @media (max-width: 400px){
+    p.info::before {
+        content: attr(data-label)": ";
+        font-weight: 600;
+    }    
+} */
+
+
+/* INPUT  */
+
+.error {
+    color: red;
+}
+
+
+/* TABLE */
+
+
+.table-responsive {
+    display: block;
+    /* width: 100%; */
+    /* overflow: visible; */
+    overflow-x: auto;
+    padding: 0 30px;
+
+}
+
+@media (max-width: 1024px) {
+
+
+    .table-responsive {
+
+        table {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        tbody {
+            display: flex;
+            /* flex-wrap: wrap; */
+            /* max-width: fit-content; */
+            justify-content: center;
+            gap: 10px;
+        }
+
+        thead tr:not(.toolbar){
+            display: none;
+        }
+
+        thead tr.toolbar {
+            max-width: 100vw;
+        }
+
+        tr {
+            /* display: block;
+            text-align: center; */
+
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            
+            
+            max-width: fit-content;
+            border: 1px solid var(--white-select);
+            border-radius: 10px;
+        }
+
+        td {
+            text-align: center !important;
+        }
+        
+        td::before {
+            font-weight: 700;
+            text-transform: capitalize;
+            margin-bottom: 5px;
+            content: attr(data-label)": ";
+        }
+
+        /* tr:nth-child(2n) {
+            background-color: #f5f5f5;
+        
+            .row-input {
+                background-color: #fff;
+            }
+        } */
+
+        td:not(:first-child) {
+            display: grid;
+            /* grid-template-columns: auto 1fr; */
+            min-width:max-content;
+        }
+
+        .no-content {
+            flex-grow: 1;
+        }
+
+        .buttons {
+            min-height: 120px;
+
+            span {
+                margin: auto;
+            }
+        }
+
+
+
+
+
+    }
+
+}
+
+/* SELECT */
+
+/* Container to hold the select and the custom arrow */
+.select-container {
+    position: relative;
+    pointer-events: auto;
+
+    /* Styling the select element */
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: transparent;
+        border: none;
+        padding: 10px;
+        padding-left: 0;
+        margin-left: 10px;
+        font-size: 16px;
+        color: #fff; /* Adjust color to match the design */
+        width: fit-content;
+        outline: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    select option {
+        padding: 5px;
+    }
+
+    /* Placeholder styling */
+    select:invalid {
+        color: gray;
+    }
+
+    /* Styling when the select is focused */
+    select:focus {
+        background-color: #000;
+    }
+
+}
+
+/* Custom arrow */
+.select-container::after {
+    content: '';
+    font-size: 16px;
+    position: absolute;
+    color: #fff;
+    top:50%;
+    right: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #fff;
+    transform: translateY(-50%);
+}
+
+.select-container:has(select:focus)::after {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: none;
+    border-bottom: 7px solid #fff; /* Adjust size as needed */
+}
+
+/* NOTIFICATION */
+
+.vue-notification-group {
+    width: min(80%, 500px) !important;
+    left: calc(50% - calc(min(80%, 500px) / 2)) !important;
+}
+
+.notify {
+    display: flex;
+    gap: 15px;
+
+    margin: 0 5px 5px;
+    padding: 10px;
+    font-size: 12px;
+    color: #ffffff;
+
+    background: #44a4fc;
+    border-left: 5px solid #187fe7;
+
+    .notification-content {
+        align-self: center;
+    }
+
+    &::before {
+        font-size: 35px;
+        font-family: boxicons !important;
+        height: fit-content;
+        align-self: center;
+    }
+
+    &.success {
+        background: #68cd86;
+        border-left-color: #42a85f;
+
+        &::before {
+            content: "\ea41";
+            animation: tada 2s linear infinite;
+        }
+    }
+
+    &.warn {
+        background: #ffb648;
+        border-left-color: #f48a06;
+
+        &::before {
+            content: "\eda3";
+            animation: burst 3s ease-in-out infinite;
+        }
+    }
+
+    &.error {
+        background: #e54d42;
+        border-left-color: #b82e24;
+
+        &::before {
+            content: "\eda3";
+            animation: flashing 2s linear infinite;
+        }
+    }
+
+}
+
+
+
+/* MAIN NAVBAR */
+
+.main-nav {
+    mix-blend-mode: difference;
+    /* color: var(--medium-grey-color); */
+    color: var(--background);
+
+    a {
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+        padding: 0.25rem;
+        border: 2px solid transparent;
+        border-radius: var(--border-radius-md);
+        transition: color 0.3s ease, border-color 0.7s ease, background-color 0.3s ease;
+    }
+
+    a:hover,
+    a.router-link-active {
+        color: var(--dark-color);
+        border-color: var(--background);
+        background-color: var(--background);
+    }
+
+    .page-links {
+        display: flex;
+        margin-left: auto;
+        gap: 1rem;
+    }
+    
+    .logo-link {
+        pointer-events: auto;
+        position: relative;
+        height: calc(100% + 2rem);
+        margin-top: 0.25rem;
+        aspect-ratio: 1 / 1;
+
+        .logo {
+            height: 100%;
+        }
+    }
+
+}
+
+.main-nav:has(#authorize.router-link-active) {
+    .page-links {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-nav {
+        gap: 0;
+
+        .page-links {
+            gap: 0;
+        }
+    }
+}
+

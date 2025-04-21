@@ -1,0 +1,20 @@
+{
+    "name": "laravel-vue-template",
+    "version": "1.0.0",
+    "description": "A template for Laravel and Vue.js projects with authentication, i18n language support, Vue-router, pinia store and optional tailwindcss, shadcn-vue and Oauth.",
+    "main": "index.js",
+    "type": "module",
+    "bin": {
+        "myapp": "./cli.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "mamqek",
+    "keywords": ["tailwindcss", "laravel", "vue", "template", "shadcn-vue", "oauth", "i18n", "vue-router", "pinia"],
+    "license": "ISC",
+    "dependencies": {
+        "node-plop": "^0.32.0",
+        "yeoman-generator": "^7.5.1"
+    }
+}

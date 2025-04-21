@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+        "@shadcn-vue-components/*": ["./resources/js/ui/shadcn-vue/ui/*"],
+        "@/*": ["./resources/js/*"],
+        "@plugins/*": ["./resources/js/plugins/*"],
+        "@images/*": ["./public/images/*"],
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

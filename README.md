@@ -49,20 +49,20 @@ project-name/
 ├── artisan
 ├── composer.json
 ├── jsconfig.json
-├── [package.json](http://_vscodecontentref_/2)
+├── package.json
 ├── phpunit.xml
-├── [README.md](http://_vscodecontentref_/3)
-├── [vite.config.js](http://_vscodecontentref_/4)
+├── README.md
+├── vite.config.js
 ├── resources/
 │   ├── css/
-│   │   └── [tailwind.css](http://_vscodecontentref_/5)
+│   │   └── tailwind.css
 │   ├── js/
-│   │   ├── [app.js](http://_vscodecontentref_/6)
+│   │   ├── app.js
 │   │   ├── plugins/
 │   │   │   ├── axios.js
-│   │   │   ├── [lang.js](http://_vscodecontentref_/7)
-│   │   │   └── [pinia.js](http://_vscodecontentref_/8)
-│   │   ├── [router.js](http://_vscodecontentref_/9)
+│   │   │   ├── lang.js
+│   │   │   └── pinia.js
+│   │   ├── router.js
 │   │   └── stores/
 │   │       └── userStore.js
 │   └── views/

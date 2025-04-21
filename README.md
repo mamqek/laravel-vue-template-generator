@@ -19,7 +19,7 @@ Unlike many other templates for combining these frameworks, this one doesn't inc
 To install the generator globally, run:
 
 ```bash
-npm install -g laravel-vue-template
+npm install -g laravel-vue-template-generator
 ```
 
 ## Usage

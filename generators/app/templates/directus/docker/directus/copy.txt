@@ -1,0 +1,14 @@
+# 1) Database dump (custom format; better for restore)
+docker exec -t directus-stack-postgres-1 `
+  pg_dump -U directus -d directus -Fc --no-owner --no-privileges `
+  > directus_backup.dump
+
+# 2) Uploads backup (tar inside container, stream out)
+docker exec directus-stack-directus-1 `
+  sh -c "tar -C /directus -czf - uploads" `
+  > uploads_backup.tgz
+
+# 3) Optional: schema-only snapshot (for Git diffing)
+docker exec -t directus-stack-postgres-1 `
+  pg_dump -U directus -d directus -s --no-owner --no-privileges `
+  > directus_schema.sql

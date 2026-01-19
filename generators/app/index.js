@@ -56,11 +56,31 @@ export default class AppGenerator extends Generator {
                 message: 'Setup Google OAuth?',
                 default: false,
             },
+            {
+                type: 'confirm',
+                name: 'vercel',
+                message: 'Setup files for Vercel hosting?',
+                default: false,
+            },
+            {
+                type: 'confirm',
+                name: 'directus',
+                message: 'Setup Directus as CMS docker container and useful controllers (container build on next step)?',
+                default: false,
+            },
+            {
+                type: 'confirm',
+                name: 'directus_build',
+                message: 'Do you want to build Directus container now?',
+                default: false,
+            },
+
         ]);
     }
 
     writing() {
-        const { name, tailwind, tailwindVersion, shadcn, oauth } = this.answers;
+        const { name, tailwind, tailwindVersion, shadcn, oauth, vercel, directus, directus_build } = this.answers;
+        const scriptsToMaybeAdd = {};
 
         // Copy all base files including dotfiles
         this.fs.copy(
@@ -96,10 +116,47 @@ export default class AppGenerator extends Generator {
             );
         }
 
+        // Vercel
+        if (vercel) {
+            this.fs.copy(
+                this.templatePath(`vercel`),
+                this.destinationPath(name),
+                { globOptions: { dot: true } }
+            );
+            scriptsToMaybeAdd['vercel:prod'] = 'npm run build && vercel . --prod --force';
+        }
+
+        // Directus
+        if (directus) {
+            this.fs.copy(
+                this.templatePath(`directus`),
+                this.destinationPath(name),
+                { globOptions: { dot: true } }
+            );
+            scriptsToMaybeAdd['directus:build'] = 'docker compose -f docker/directus/docker-compose.yml up -d --build';
+            scriptsToMaybeAdd['directus:start'] = 'docker compose -f docker/directus/docker-compose.yml up -d';
+            scriptsToMaybeAdd['directus:stop']  = 'docker compose -f docker/directus/docker-compose.yml down';
+            scriptsToMaybeAdd['directus:log']   = 'docker compose -f docker/directus/docker-compose.yml logs -f';
+        }
+
+
+        // Merge scripts into package.json without clobbering existing keys
+        const pkgPath = this.destinationPath(name, 'package.json');
+        const pkg = this.fs.readJSON(pkgPath, {});
+        pkg.scripts = pkg.scripts || {};
+
+        for (const [k, v] of Object.entries(scriptsToMaybeAdd)) {
+            if (!(k in pkg.scripts)) {
+                pkg.scripts[k] = v; // add only if missing
+            }
+        }
+
+        this.fs.writeJSON(pkgPath, pkg);
+
     }
 
     install() {
-        const { sqlite, shadcn, tailwindVersion, oauth } = this.answers;
+        const { sqlite, shadcn, tailwindVersion, oauth, directus, directus_build } = this.answers;
 
         const projectPath = this.destinationPath(this.answers.name);
 
@@ -110,6 +167,7 @@ export default class AppGenerator extends Generator {
         // Install Node dependencies
         this.log(`\nInstalling Node dependencies (npm) in ./${this.answers.name}…`);
         this.spawnCommandSync('npm', ['install'], { cwd: projectPath });
+        this.spawnCommandSync('npm', ['update'], { cwd: projectPath });
 
         // Initialize environment using Node fs copy to be cross-platform
         this.log(`\nInitializing environment file…`);
@@ -155,6 +213,10 @@ export default class AppGenerator extends Generator {
         if (oauth) {
             this.log(`\nInstalling Google OAuth dependency (laravel/socialite) in ./${this.answers.name}…`);
             this.spawnCommandSync('composer', ['require', 'laravel/socialite:^5.19'], { cwd: projectPath });
+        }
+
+        if (directus_build) {
+            this.spawnCommandSync('npm', ['run', 'directus:build'], { cwd: projectPath });
         }
     }
 

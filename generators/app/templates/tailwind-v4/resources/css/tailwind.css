@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@import "tw-animate-css";
+
+@config "../js/plugins/fluidTypography.cjs";
+
+@custom-variant dark (&:is(.dark *));
+@source "../views";
+
+@theme {
+    --color-gray: #767676;
+    --font-montserrat: "Montserrat", sans-serif;
+    --font-roboto: "Roboto", sans-serif;
+    --font-aquire: 'Aquire', sans-serif;
+    --color-gray-border: #4e4e4e;
+    --color-gray-border-darker: #434343;
+    --color-gray-border-lighter: #989898;
+    --color-white: #F2F0EF;
+    --color-white-cream: #FFFBF3;
+    --color-lime: #1EFB0A;
+    --spacing-nav-screen: calc(100lvh - var(--spacing-nav));
+    --spacing-nav-screen-sm: calc(100lvh - var(--spacing-nav-sm));
+    --spacing-nav: 100px;
+    --spacing-nav-sm: 80px;
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    font-family: var(--font-montserrat);
+    color: white;
+    @apply bg-background ; /* text-foreground */
+  }
+}

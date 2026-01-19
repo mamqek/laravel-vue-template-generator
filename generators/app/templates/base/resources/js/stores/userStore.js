@@ -8,12 +8,10 @@ import router from '@/router'
 export const useUserStore = defineStore('user', {
     state: () => ({
         user: {
-            username: null,
+            email: null,
             role: null,
         }, 
         authenticated: false,
-        language: null,
-        translations: null,
     }),
 
     persist: true,
@@ -24,10 +22,6 @@ export const useUserStore = defineStore('user', {
         },
 
         authenticate() {
-            if (!this.authenticated) {
-                return;
-            }
-
             $axios.post('auth/authenticate')
             .then(({data}) => {
                 if(!data && this.authenticated) {
@@ -45,8 +39,7 @@ export const useUserStore = defineStore('user', {
         },
 
         authorize(data = null) {
-            this.user.username = data?.username;
-            // this.user.full_name = data?.full_name;
+            this.user.email = data?.email;
             this.user.role = data?.role;
             this.authenticated = true;
         },
@@ -66,7 +59,7 @@ export const useUserStore = defineStore('user', {
                 });
 
                 this.user = {
-                    username: null,
+                    email: null,
                     role: null,
                 };
                 this.authenticated = false;
@@ -75,10 +68,5 @@ export const useUserStore = defineStore('user', {
                 console.error("[Logout function failed]: ", error)
             }
         },
-
-        setLanguage(language, translations){
-            this.language = language;
-            this.translations = translations;
-        }
     },
 });

@@ -1,0 +1,11 @@
+node_modules/
+/vendor/
+storage/
+.vercel/
+
+public/hot
+.vercel
+.env
+.phpunit.result.cache
+
+docker/directus/.env

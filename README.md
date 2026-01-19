@@ -3,6 +3,11 @@
 A generator tool for quickly scaffolding Laravel and Vue.js projects with built-in support for authentication, i18n language support, Vue Router, Pinia store, and optional integrations like TailwindCSS, ShadCN-Vue components, and Google OAuth.
 Unlike many other templates for combining these frameworks, this one doesn't include Intertia, instead it passes all requests through Laravel routing and uses Axios for API requests.
 
+## TODO 
+
+- Add smooth scroll with lenis
+- Add vercel setup files 
+
 ## Features
 
 - **Laravel + Vue.js**: Combines the power of Laravel for backend development with Vue.js for frontend development.

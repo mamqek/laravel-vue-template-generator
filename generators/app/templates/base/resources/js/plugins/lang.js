@@ -4,9 +4,12 @@ import { $axios } from './axios.js'
 import { useUserStore } from '../stores/userStore.js';
 import { notify } from "@kyvg/vue3-notification";
 
+// Grab <html lang="..."> value
+const htmlLang = document.documentElement.lang || 'en';
+
 const i18n = createI18n({
-  locale: 'en',
-  fallbackLocale: 'ru',
+  locale: htmlLang,
+  fallbackLocale: 'en',
   messages: {},
 });
 

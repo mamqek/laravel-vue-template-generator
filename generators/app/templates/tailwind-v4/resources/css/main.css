@@ -1,0 +1,16 @@
+/* 1️⃣ Bring in Tailwind (Preflight + components + utilities layers) */
+@import "./tailwind.css";
+
+/* 2️⃣ Inject your reset and app styles into the Base layer,
+       immediately after Preflight, but before Utilities */
+@layer base {
+  /* Normalize/reset rules */
+  @import "./reset.css";
+
+  /* Your custom app-level styles */
+  @import "./app.css";
+
+/* Additional styles */
+  @import "./elements.css";
+
+}

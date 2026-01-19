@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { useUserStore } from '@/stores/userStore';
-import { t } from '@plugins/lang';
 
 
 const routes = [
@@ -53,10 +52,35 @@ const routes = [
 const router =  createRouter({
     history: createWebHistory(),
     routes,
+    scrollBehavior(to, from, savedPosition) {
+        // 1) Back/forward – restore saved position
+        if (savedPosition) return savedPosition;
+
+        // 2) Hash anchors – scroll to element (optionally smooth)
+        if (to.hash) {
+            return {
+                el: to.hash,
+                behavior: 'smooth', // optional
+                // top: 64, // optional offset if you have a fixed header
+            };
+        }
+
+        // 3) Keep scroll if either route opts out (overlays/panels)
+        if (to.meta.preserveScroll || from.meta.preserveScroll) return false;
+
+        // 4) Default – go to top (optionally after a delay/transition)
+        return new Promise((resolve) => {
+        // wait for your route transition (~300ms) or next frame
+        setTimeout(() => resolve({ left: 0, top: 0 }), 300);
+        // OR (no delay): resolve({ left: 0, top: 0 })
+        // OR (2 RAFs to wait until layout settles):
+        // requestAnimationFrame(() => requestAnimationFrame(() => resolve({ top: 0 })))
+        });
+    }
 });
 
 router.beforeEach((to, from, next) => {
-    document.title = t(to.meta.title) || to.name || 'Default Title'
+    document.title = to.meta.title || to.name || 'Default Title'
 
     const isAuthenticated = useUserStore().authenticated;
     const userRole = useUserStore().user.role;

@@ -17,4 +17,4 @@ Route::group(['prefix' => 'auth'], function () {
 
 Route::get('/{vue_capture?}', function () {
     return view('welcome');
-})->where('vue_capture', '[\/\w\.-]*');
+})->where('vue_capture', '^(?!\.well-known)(?!robots\.txt$)(?!favicon\.ico$)[\/\w\.-]*$');

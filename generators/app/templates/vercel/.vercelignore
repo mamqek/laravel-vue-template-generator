@@ -1,0 +1,7 @@
+/vendor
+node_modules/
+tests/
+*.md
+*.log
+docs/
+public/hot

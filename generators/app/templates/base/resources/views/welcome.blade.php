@@ -10,9 +10,7 @@
         <!-- TODO: Satisfactory calculator graphical with algular -->
 
         @vite([
-            'resources/css/app.css',
-            'resources/css/reset.css',
-            'resources/css/elements.css',
+            'resources/css/main.css',
             'resources/js/app.js'
         ])
 

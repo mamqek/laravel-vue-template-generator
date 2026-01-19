@@ -1,0 +1,18 @@
+Only need to ensure that the folder is created in the container
+In compose file this email directory (the one this file is in) is linked to templates directory, so can even make changes to templates without reloading 
+
+-- Ensure folder exists
+docker exec directus-stack-directus-1 mkdir -p /directus/templates
+
+-- Hard reload of container if changed env
+docker compose up -d --force-recreate directus
+
+-- If have an error that template is missing when it si there, probably permissions issues for the email dir on server
+# make directories traversable and readable
+find ./email -type d -exec chmod 755 {} +
+# make files readable
+find ./email -type f -exec chmod 644 {} +
+
+The rest of important configuration is in .env 
+
+

@@ -1,6 +1,6 @@
 {
     "name": "laravel-vue-generator",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A generator tool for quickly scaffolding Laravel and Vue.js projects with built-in support for authentication, i18n language support, Vue Router, Pinia store, and optional integrations like TailwindCSS, ShadCN-Vue components, and Google OAuth.",
     "main": "index.js",
     "type": "module",

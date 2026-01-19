@@ -35,12 +35,6 @@ return [
         ],
     ],
 
-    'external_api' => [
-        'bag_kadaster' => [
-            'key' => env('BAG_KADASTER_API_KEY'),
-        ],
-    ],
-
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),

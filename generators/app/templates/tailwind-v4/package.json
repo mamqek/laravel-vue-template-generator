@@ -9,6 +9,7 @@
         "axios": "^1.6.4",
         "globals": "^15.8.0",
         "laravel-vite-plugin": "^1.0",
+        "tailwindcss-fluid-type": "github:davidhellmann/tailwindcss-fluid-type#next",
         "vite": "^6.3.0"
     },
     "dependencies": {

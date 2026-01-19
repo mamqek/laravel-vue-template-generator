@@ -1,0 +1,31 @@
+name: directus-stack
+
+services:
+  directus:
+    image: directus/directus:latest
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${DIRECTUS_PORT}:8055"
+    depends_on:
+      - postgres
+    # IMPORTANT: use named volumes for performance; avoid bind-mounting Windows paths for DB/uploads
+    volumes:
+      - directus_uploads:/directus/uploads
+      - directus_extensions:/directus/extensions
+      - ./email:/directus/templates
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+  directus_uploads:
+  directus_extensions:
